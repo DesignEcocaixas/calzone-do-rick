@@ -23,7 +23,7 @@ body {
     font-family: 'Poppins', serif;
     position: relative;
     /*COMENTAR O BACKGROUND EM CASO DE USO DE VÍDEO*/
-    background: linear-gradient(to bottom, #f4b804 20%, transparent 100%);
+    background: linear-gradient(to bottom, #094d0e 20%, transparent 100%);
     
     /* Animação de entrada */
     animation: fadeIn 1.5s ease-in forwards;
