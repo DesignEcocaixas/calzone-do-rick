@@ -1,0 +1,498 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*ALTERA A FONT*/
+    font-family: 'Poppins', serif;
+    position: relative;
+    /*COMENTAR O BACKGROUND EM CASO DE USO DE VÍDEO*/
+    background: linear-gradient(to bottom, #f4b804 20%, transparent 100%);
+    
+    /* Animação de entrada */
+    animation: fadeIn 1.5s ease-in forwards;
+}
+
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
+}
+
+/*ALTERA AS CORES DO CONTORNO DA LOGO*/
+.logo img {
+    width: 200px;
+    margin-top: 20px;
+    /*filter: drop-shadow(0 0 10px #f4ee04) drop-shadow(0 0 5px #f4ee04) drop-shadow(0 0 5px #f4ee04);*/
+}
+
+.blur-light {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.55;
+    pointer-events: none;
+    transition: transform 4s ease-in-out;
+}
+
+/*ALTERA AS CORES DAS LUZES DE FUNDO*/
+.light1 {
+    background: #ff0077;
+}
+
+.light2 {
+    background: #00d4ff;
+}
+
+.text {
+    width: 100%;
+    text-align: center;
+    font-family: 'Droid Serif', sans-serif;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+/*FRASE DO MEIO*/
+h2 {
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 3px 3px 0 #930fec;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/*ESTILIZAÇÃO DOS BOTÕES*/
+.link-container {
+    background-color: #ec0f0f;
+    background-image: radial-gradient(#b10000 0.5px, transparent 0.5px);
+    background-size: 5px 5px;
+    border-radius: 40px;
+    /*ALTERA A LARGURA DOS BOTÕES*/
+    width: 200px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'ChunkFive', serif;
+    /*DESCOMENTAR CASO USE BORDAS*/
+    /*border: 4px solid #f4ee04;*/
+}
+
+.link-container>a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/*LOGO ECO*/
+#splash {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#splash.hide {
+    animation: splashFade 0.6s forwards;
+}
+
+@keyframes splashFade {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+#logo {
+    width: 260px;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+#logo.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#logo.exit {
+    transition: transform 0.8s ease, opacity 0.4s ease;
+    opacity: 0;
+    transform: translateX(120%) scale(0.8);
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 0);
+    }
+
+    40% {
+        transform: translate(2px, 0);
+    }
+
+    60% {
+        transform: translate(-2px, 0);
+    }
+
+    80% {
+        transform: translate(2px, 0);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+.boas-praticas {
+    width: 200px;
+    padding: 20px;
+    height: 90px;
+    background-color: #ec0f0f;
+    background-image: radial-gradient(#b10000 0.5px, transparent 0.5px);
+    background-size: 5px 5px;
+    border-radius: 10px 10px 0px 0px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 1000;
+    color: #fff;
+    overflow: hidden;
+    /* necessário para esconder o brilho fora da caixa */
+}
+
+.boas-praticas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    animation: brilho-passando 4s infinite;
+    z-index: 1;
+}
+
+.boas-praticas * {
+    position: relative;
+    z-index: 2;
+    /* garante que o texto fique acima do brilho */
+}
+
+@keyframes brilho-passando {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+
+.boas-praticas>a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+.folha {
+    position: absolute;
+    top: -100px;
+    /* começa acima da tela */
+    width: 70px;
+    opacity: 0.9;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Posicionamento horizontal inicial */
+.folha1 {
+    left: 10vw;
+    animation-name: cair1;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.folha2 {
+    left: 40vw;
+    animation-name: cair2;
+    animation-duration: 10s;
+    animation-delay: 3s;
+}
+
+.folha3 {
+    left: 60vw;
+    animation-name: cair3;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
+.folha4 {
+    left: 80vw;
+    animation-name: cair4;
+    animation-duration: 9s;
+    animation-delay: 5s;
+}
+
+/* Animações */
+@keyframes cair1 {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(30px) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cair2 {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-40px) translateY(110vh) rotate(-360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cair3 {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(20px) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cair4 {
+    0% {
+        transform: translateX(0) translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(20px) translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/*SHAPES ANIMADOS*/
+.shape {
+    position: absolute;
+    background: #a200ff;
+    width: 300px;
+    height: 350px;
+    transition: border-radius 4s ease-in-out;
+    z-index: 0;
+}
+
+/* Lado esquerdo */
+#shape1 {
+    top: 20px;
+    left: -250px;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Lado direito */
+#shape2 {
+    top: -100px;
+    right: -250px;
+    border-radius: 50% 50% 60% 40% / 60% 50% 50% 40%;
+}
+
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-45deg, #ff0000, #930fec);
+    background-size: 200% 200%;
+    animation: gradiente-movendo 2s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+@keyframes gradiente-movendo {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#enterBtn {
+    font-size: 24px;
+    padding: 15px 30px;
+    background-color: #ffffff;
+    color: #343434;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Chunkfive', sans-serif;
+}
+
+.splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s;
+    z-index: 9998;
+}
+
+.splash.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#logo {
+    opacity: 0;
+    transform: scale(0.6);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+#logo.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#logo.exit {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+
+.splash.hide {
+    display: none;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-5px);
+    }
+
+    40% {
+        transform: translateX(5px);
+    }
+
+    60% {
+        transform: translateX(-5px);
+    }
+
+    80% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.4s;
+}

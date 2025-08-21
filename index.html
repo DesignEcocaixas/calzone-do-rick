@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDI animado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/chunkfive" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="logo">
+        <img src="./logo.png" alt="logo">
+    </div>
+
+    <!-- Luzes de fundo -->
+    <div class="blur-light light1"></div>
+    <div class="blur-light light2"></div>
+
+    <!--<div class="text">
+        <em>
+            <h2>Peça sua pizza <br> diferenciada!</h2>
+        </em>
+    </div>-->
+
+    <!-- Conteúdo principal -->
+    <div class="content">
+        <div class="link-container">
+            <i id="icon-wp" class="fab fa-whatsapp fa" style="color: #fff;"></i>
+            <a href="https://api.whatsapp.com/send/?phone=71991707559&type=phone_number&app_absent=0" target="_blank" style="margin-right: 10px;">Whatsapp</a>
+        </div>
+
+        <div class="link-container">
+            <i id="icon-ig" class="fab fa-instagram fa" style="color: #fff;"></i>
+            <a href="https://www.instagram.com/calzonedorick_?igsh=YnQwdGl2aWRkNTFj&utm_source=qr" target="_blank">Nosso insta</a>
+        </div>
+
+        <div class="link-container">
+            <i id="icon-lc" class="fas fa-map-marker-alt" style="color: #fff;"></i>
+            <a href="https://share.google/3EISFKofT4GSqTZOZ" target="_blank">Localização</a>
+        </div>
+
+        <div class="link-container">
+            <i id="icon-pd" class="fas fa-receipt" style="color: #fff;"></i>
+            <a href="https://menu.brendi.com.br/calzone-do-rick-calzonedorickcolinaspituacu"
+                target="_blank">Peça aqui</a>
+        </div>
+    </div>
+
+    <div class="boas-praticas">
+        <a href="https://drive.google.com/file/d/1SEHZvFw3fsg7jPuPa2e64fjTDSwXE0pN/view">Boas práticas</a>
+        <i class="fas fa-hand-pointer"></i>
+    </div>
+
+    <!-- Tela de introdução com logo -->
+    <!--<div id="splash">
+        <img src="logo-ecocaixas.png" alt="Eco Caixas" id="logo">
+    </div>-->
+
+
+    <!-- DESCOMENTAR PARA APLICAR EFEITO DE OBJETOS QUE CAEM
+    <img src="./obj/hamburger1.png" alt="" class="folha folha1">
+    <img src="./obj/tomate1.png" alt="" class="folha folha2">
+    <img src="./obj/hamburger3.png" alt="" class="folha folha3">
+    <img src="./obj/alface1.png" alt="" class="folha folha4">-->
+
+    <!--CONTAINER COM VÍDEO DE FUNDO-->
+    <video autoplay muted loop playsinline id="bgVideo">
+        <!--ALTERE O NÚMERO DE "pizzaria5" PARA O NUMERO DO VÍDEO DESEJADO-->>
+        <source src="./bg/bg-pizzaria.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <!-- TELA DE ENTRADA COM BOTÃO -->
+    <!--<div id="startScreen" class="start-screen">
+        <button id="enterBtn">
+            <i class="fas fa-pizza-slice"></i> Menu da Pizzaria
+        </button>
+    </div>-->
+
+    <!-- SPLASH COM A LOGO -->
+    <!--<div id="splash" class="splash">
+        <img id="logo" src="logo.png" alt="Logo" />
+    </div>-->
+
+    <!-- ÁUDIO -->
+    <!--<audio id="meuAudio" src="/audio/musica1.mp3" preload="auto"></audio>-->
+
+    <!--<div class="shape" id="shape1"></div>
+    <div class="shape" id="shape2"></div>-->
+
+
+    <script src="./script.js"></script>
+</body>
+
+
+</html>
