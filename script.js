@@ -20,7 +20,7 @@ function startLights() {
 }
 
 // FUNÇÃO PARA INTRO DA LOGO COM ANIMAÇÃO
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const splash = document.getElementById('splash');
     const logo = document.getElementById('logo');
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => splash.classList.add('hide'), 2400);   // Tela preta desaparece
 
     startLights();
-});
+});*/
 
 window.addEventListener('resize', () => {
     document.querySelectorAll('.blur-light').forEach(moveLight);
@@ -72,7 +72,7 @@ function randomRadius() {
     return `${values[0]}% ${values[1]}% ${values[2]}% ${values[3]}% / ${values[4]}% ${values[5]}% ${values[6]}% ${values[7]}%`;
 }
 
-function animateContinuously(id) {
+/*function animateContinuously(id) {
     const el = document.getElementById(id);
 
     function update() {
@@ -81,21 +81,21 @@ function animateContinuously(id) {
     }
 
     update(); // inicia a primeira transformação
-}
+}*/
 
-animateContinuously('shape1');
-animateContinuously('shape2');
+/*animateContinuously('shape1');
+animateContinuously('shape2');*/
 
 // FUNÇÃO PARA EXECUÇÃO DO AUDIO
-window.addEventListener("load", function () {
+/*window.addEventListener("load", function () {
     setTimeout(() => {
         const audio = document.getElementById("meuAudio");
         audio.play().catch(e => console.log("Reprodução bloqueada pelo navegador:", e));
     }, 3650); // 3000ms = 3 segundos
-});
+});*/
 
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const startScreen = document.getElementById('startScreen');
     const enterBtn = document.getElementById('enterBtn');
     const splash = document.getElementById('splash');
@@ -125,8 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-});
+});*/
 
+startLights()
 
 // EFEITO PARA CHACOALHAR O BOTÃO DE INÍCIO
 const enterBtn = document.getElementById('enterBtn');
